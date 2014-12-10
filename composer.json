@@ -1,0 +1,30 @@
+{
+    "name": "avenda/fhir-server-php-codeigniter",
+    "description": "A PHP (Codeigniter) Reference Implementation Server for the FHIR Specification.",
+    "require": {
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "avenda",
+            "email": "avenda@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/chriskacerguis/codeigniter-restserver"
+        }
+    ],
+    "require": {
+        "rogeriopradoj/codeigniter": "2.2.0"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "cp -r vendor/rogeriopradoj/codeigniter/application `pwd`",
+            "cp vendor/rogeriopradoj/codeigniter/index.php `pwd`",
+            "sed -i  \"s/$system_path\\= 'system';/$system_path\\='vendor\\/rogeriopradoj\\/codeigniter\\/system';/\" index.php"
+        ]
+    }        
+}
