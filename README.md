@@ -19,7 +19,7 @@ System Pre-requisites
 
 ###  Get it (for forking proposed only)
 ```
-$ git clone https://github.com/smart-on-fhir/api-server
+$ git clone https://github.com/avenda/fhir-server-php-codeigniter
 $ cd api-server
 $ composer install
 ```
