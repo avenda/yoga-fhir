@@ -6,7 +6,7 @@ class Api extends REST_Controller {
 
     function __construct() {
         parent::__construct();
-        //Session validation here
+        $this->response('Not logged', 403);
     }
 
 }

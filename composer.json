@@ -12,19 +12,32 @@
     ],
     "minimum-stability": "dev",
     "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/chriskacerguis/codeigniter-restserver"
+    {
+        "type": "package",
+        "package": {
+            "name": "chriskacerguis/codeigniter-restserver",
+            "version": "master",
+            "source": {
+                "url": "https://github.com/chriskacerguis/codeigniter-restserver.git",
+                "type": "git",
+                "reference": "master"
+            }
         }
+    }
     ],
     "require": {
-        "rogeriopradoj/codeigniter": "2.2.0"
+        "rogeriopradoj/codeigniter": "2.2.0",
+        "chriskacerguis/codeigniter-restserver": "master"
     },
     "scripts": {
         "post-install-cmd": [
             "cp -r vendor/rogeriopradoj/codeigniter/application `pwd`",
             "cp vendor/rogeriopradoj/codeigniter/index.php `pwd`",
-            "sed -i  \"s/$system_path\\= 'system';/$system_path\\='vendor\\/rogeriopradoj\\/codeigniter\\/system';/\" index.php"
+            "sed -i  \"s/$system_path\\= 'system';/$system_path\\='vendor\\/rogeriopradoj\\/codeigniter\\/system';/\" index.php",
+            "sed -i  \"s/$route['default_controller']\\= \"welcome\";/$route['default_controller']\\= \"welcome\";/\" application\\/config\\/routes.php",
+            "cp vendor/chriskacerguis/codeigniter-restserver/application/libraries/Format.php application/libraries",
+            "cp vendor/chriskacerguis/codeigniter-restserver/application/libraries/REST_Controller.php application/libraries",
+            "cp vendor/chriskacerguis/codeigniter-restserver/application/config/rest.php application/config"
         ]
     }        
 }
